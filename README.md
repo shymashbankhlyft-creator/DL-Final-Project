@@ -59,7 +59,7 @@ The preprocessing pipeline includes:
 
 ## 1. Resize Images
 
-transforms.Resize((32, 32))
+transforms.Resize((28, 28))
 
 All images are resized to 32×32.
 
