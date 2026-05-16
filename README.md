@@ -20,8 +20,7 @@ The notebook includes:
 
 ## Google Colab Notebook
 
-[Open in Colab](https://colab.research.google.com/drive/1RRXYsd2IKEuaxecqL-mIWdbvjBSyvuSF?usp=sharing)
-
+[Open in Colab](https://colab.research.google.com/drive/13ZtZCrl6KoZcZZqRr0E3yXjXycZNi34R?usp=sharing)
 # Dataset Information
 ## MNIST Dataset
 
@@ -41,7 +40,7 @@ Dataset Details:
 - PyTorch MNIST Documentation:
   https://pytorch.org/vision/stable/generated/torchvision.datasets.MNIST.html
 
-The dataset is downloaded automatically 
+The dataset is downloaded automatically using torchvision.datasets.MNIST.
 
 # Libraries Used
 
@@ -61,7 +60,7 @@ The preprocessing pipeline includes:
 
 transforms.Resize((28, 28))
 
-All images are resized to 32×32.
+All images are resized to 28×28.
 
 
 ## 2. Convert Images to Tensor
@@ -97,7 +96,7 @@ random_split(dataset, [train_size, val_size])
 # DataLoader Configuration
 
 
-batch_size = 64
+batch_size = 32
 
 
 Three dataloaders are created:
@@ -164,11 +163,11 @@ Adam provides adaptive learning rates and fast convergence.
 
 optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
 
-SGD updates model weights using gradient descent.
+Momentum was used with SGD to improve convergence stability and training performance.
 
 # Training Configuration
-epochs = 10
-batch_size = 64
+epochs = 7
+batch_size = 32
 learning_rate = 0.001
 
 
@@ -218,8 +217,8 @@ At the end of the notebook, both optimizers are compared based on:
 Example:
 
 | Model | Accuracy | Loss |
-| CNN + Adam | 99.18% | 0.0266 |
-| CNN + SGD |97.40  | 0.088463 |
+CNN + Adam	98.97%	0.0307
+CNN + SGD	98.94%	0.0303
 
 # Key Concepts Used
 
@@ -241,9 +240,9 @@ Example:
 
 ## 2. Install required libraries if needed
 
-`
+```bash
 pip install torch torchvision matplotlib pandas
-
+```
 
 ## 3. Run all notebook cells sequentially
 
